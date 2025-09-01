@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Redirecting...</title>
+    <script>
+      const redirects = {
+        "docasaw": "https://ra-sl.com/dp-B07NQMN8CNLP"
+        // Add more shortlinks here, example lang to^
+      };
+
+      function getParam(name) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(name);
+      }
+
+      const key = getParam("to");
+      const url = redirects[key?.toLowerCase()];
+
+      if (url) {
+        window.location.replace(url);
+      } else {
+        document.write("<h2>Redirect not found</h2><p>Use ?to=shortname</p>");
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
